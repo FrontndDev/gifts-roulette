@@ -19,11 +19,11 @@ export const Circle = () => {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="30"
-        height="26"
+        width="7.46vw"
+        height="6.47vw"
         viewBox="0 0 30 26"
         fill="none"
-        className="absolute top-[-12px] right-0 left-0 z-[2] m-auto"
+        className="absolute top-[-2.99vw] right-0 left-0 z-[2] m-auto"
       >
         <path
           d="M12.9434 24.1875C13.8575 25.7707 16.1425 25.7707 17.0566 24.1875L28.3154 4.6875C29.2294 3.10432 28.0867 1.12533 26.2588 1.125H3.74121C1.91325 1.12533 0.770642 3.10432 1.68457 4.6875L12.9434 24.1875Z"

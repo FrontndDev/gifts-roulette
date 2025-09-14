@@ -87,7 +87,7 @@ const SelectList = <T extends object>({
         orientation="vertical"
         className={cn(
           className,
-          'bg-dark-gray-card shadow-border ml-auto max-w-[150px] min-w-[150px] scroll-py-1 overflow-y-auto overscroll-contain !rounded-lg border-none !p-2',
+          'bg-dark-gray-card shadow-border ml-auto max-w-[37.31vw] min-w-[37.31vw] scroll-py-1 overflow-y-auto overscroll-contain !rounded-lg border-none !p-2',
           "grid w-full grid-cols-[auto_1fr] flex-col !p-2 outline-hidden *:[[role='group']+[role=group]]:mt-4 *:[[role='group']+[role=separator]]:mt-1",
         )}
         items={items}
@@ -112,7 +112,7 @@ const SelectTrigger = ({
       className={cn(
         className,
         twJoin([
-          'text-fg bg-dark-gray-button shadow-border flex h-[44px] w-full min-w-0 cursor-pointer items-center gap-x-2 rounded-lg px-3 text-start text-[15px] leading-tight font-medium text-white outline-hidden transition duration-200',
+          'text-fg bg-dark-gray-button shadow-border flex h-[44px] w-full min-w-0 cursor-pointer items-center gap-x-2 rounded-lg px-3 text-start text-[3.73vw] leading-tight font-medium text-white outline-hidden transition duration-200',
           'forced-colors:group-disabled/select/select:text-[GrayText] group-disabled/select:opacity-50 forced-colors:group-disabled/select:inset-ring-[GrayText]',
           'group-open/select:invalid:inset-ring-danger/70 group-open/select:invalid:ring-danger/20 group-invalid/select:inset-ring-danger/70 group-invalid/select:ring-danger/20 group-focus/select:group-invalid/select:inset-ring-danger/70 group-focus/select:group-invalid/select:ring-danger/20 group-open/select:invalid:ring-3',
           'pressed:*:data-[slot=icon]:text-(--btn-icon-active) *:data-[slot=icon]:-mx-0.5 *:data-[slot=icon]:my-0.5 *:data-[slot=icon]:size-5 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:self-center *:data-[slot=icon]:text-(--btn-icon) hover:*:data-[slot=icon]:text-(--btn-icon-active)/90 focus-visible:*:data-[slot=icon]:text-(--btn-icon-active)/80 sm:*:data-[slot=icon]:my-1 sm:*:data-[slot=icon]:size-4 forced-colors:[--btn-icon:ButtonText] forced-colors:hover:[--btn-icon:ButtonText]',

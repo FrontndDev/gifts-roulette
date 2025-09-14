@@ -60,7 +60,7 @@ export function CraftPage() {
       >
         <div
           className={cn(
-            'bg-text relative flex h-[14.93vw] w-[14.93vw] items-center justify-center rounded-[10px] transition-all',
+            'bg-text relative flex h-[14.8vw] w-[14.8vw] items-center justify-center rounded-[10px] transition-all',
             isSelected &&
               selectedTab === 'inventory' &&
               'ring-[2px] ring-[#2B87FE]',
@@ -86,15 +86,17 @@ export function CraftPage() {
   }
 
   const renderInventoryView = () => (
-    <div className="flex flex-col items-center gap-[25px]">
+    <div className="flex flex-col items-center gap-[6.22vw]">
       <div
         className={cn(
           'bg-dark-gray-card border-text flex h-[70dvh] w-full flex-col justify-between gap-[12px] rounded-2xl border p-[22px_28px_36px]',
         )}
       >
         {!mockGifts.length && (
-          <div className="relative mb-[6px]">
-            <div className="text-center text-[15px] font-[500]">Инвентарь</div>
+          <div className="relative mb-[1.49vw]">
+            <div className="text-center text-[3.73vw] font-[500]">
+              Инвентарь
+            </div>
             <Icons.Close
               className="absolute top-0 right-0 h-[19px] w-[19px] cursor-pointer"
               onClick={() => setShowItems(false)}
@@ -103,18 +105,18 @@ export function CraftPage() {
         )}
 
         {mockGifts.length ? (
-          <div className="mt-[11px] flex flex-wrap gap-[2.99vw]">
+          <div className="mt-[2.74vw] flex flex-wrap gap-[2.99vw]">
             {mockGifts.map((gift) => renderGiftSlot(gift))}
           </div>
         ) : (
-          <div className="mt-[11px] text-center text-[15px]">
+          <div className="mt-[2.74vw] text-center text-[3.73vw]">
             У вас нет гифтов
             <br />
             Отправьте на @name
           </div>
         )}
 
-        <div className="m-[0_18px] flex h-[47px] cursor-pointer overflow-hidden rounded-[2005px] bg-[#656565]">
+        <div className="m-[0_4.48vw] flex h-[11.7vw] cursor-pointer overflow-hidden rounded-[2005px] bg-[#656565]">
           <div
             className={cn(
               'flex h-full w-full items-center justify-center rounded-[1215px]',
@@ -137,10 +139,10 @@ export function CraftPage() {
       </div>
 
       {mockGifts.length ? (
-        <div className="flex gap-[22px]">
+        <div className="flex gap-[5.47vw]">
           <Button
             className={cn(
-              'border-text m-auto h-[45px] w-[140px] !rounded-full border bg-[#2B87FE] text-white',
+              'border-text m-auto h-[11.19vw] w-[34.83vw] !rounded-full border bg-[#2B87FE] text-white',
               selectedGifts.size > 0
                 ? '!bg-[#2B87FE] text-white'
                 : 'border-[#656565] !bg-[#262626] text-[#656565]',
@@ -151,7 +153,7 @@ export function CraftPage() {
           </Button>
           <Button
             className={cn(
-              'border-text m-auto h-[45px] w-[140px] !rounded-full border',
+              'border-text m-auto h-[11.19vw] w-[34.83vw] !rounded-full border',
               selectedGifts.size > 0
                 ? '!bg-[#F7F7F7] text-[#262626]'
                 : 'border-[#656565] !bg-[#262626] text-white',
@@ -164,7 +166,7 @@ export function CraftPage() {
       ) : (
         <Button
           className={cn(
-            'border-text m-auto h-[45px] w-[140px] !rounded-full border bg-[#2B87FE] text-white',
+            'border-text m-auto h-[11.19vw] w-[34.83vw] !rounded-full border bg-[#2B87FE] text-white',
           )}
         >
           Пополнить
@@ -174,26 +176,26 @@ export function CraftPage() {
   )
 
   const upgrade = () => (
-    <div className="flex flex-col items-center gap-[25px]">
+    <div className="flex flex-col items-center gap-[6.22vw]">
       <div
         className={cn(
-          'bg-dark-gray-card border-text flex h-[70dvh] w-full flex-col gap-[12px] rounded-2xl border p-[22px_28px_36px]',
+          'bg-dark-gray-card border-text flex h-[70dvh] w-full flex-col gap-[2.99vw] rounded-2xl border p-[5.47vw_6.97vw_8.96vw]',
         )}
       >
-        <div className="relative mb-[6px]">
-          <div className="text-center text-[15px] font-[500]">Улучшение</div>
+        <div className="relative mb-[1.49vw]">
+          <div className="text-center text-[3.73vw] font-[500]">Улучшение</div>
           <Icons.Close
             className="absolute top-0 right-0 h-[19px] w-[19px] cursor-pointer"
             onClick={() => setShowUpgrade(false)}
           />
         </div>
-        <div className="mt-[11px] flex h-[100%] flex-wrap gap-[2.99vw] overflow-auto">
+        <div className="mt-[2.74vw] flex h-[100%] flex-wrap gap-[2.99vw] overflow-auto">
           {mockGifts.map((gift) => renderGiftSlot(gift))}
         </div>
       </div>
       <Button
         onClick={() => setShowUpgrade(true)}
-        className="mx-auto w-[145px] !rounded-full border bg-[#E94DBB] text-[12px] leading-[10px] font-[600] backdrop-blur-[10.57px]"
+        className="mx-auto w-[36.1vw] !rounded-full border bg-[#E94DBB] text-[2.99vw] leading-[2.49vw] font-[600] backdrop-blur-[10.57px]"
       >
         Улучшить
       </Button>
@@ -205,14 +207,14 @@ export function CraftPage() {
       {showItems && renderInventoryView()}
       {showUpgrade && upgrade()}
       {!showItems && !showUpgrade && (
-        <div className="relative top-[-40px] flex flex-col items-center gap-[20px]">
+        <div className="relative top-[-9.95vw] flex flex-col items-center gap-[4.98vw]">
           <CraftCircle />
-          <div className="flex flex-col items-center gap-[14px]">
-            <div className="text-[16px] leading-[16px] font-[400] text-white">
+          <div className="flex flex-col items-center gap-[3.48vw]">
+            <div className="text-[3.98vw] leading-[3.98vw] font-[400] text-white">
               Ваши предметы
             </div>
             <BalanceCounter
-              className="h-[28px] w-[79px] !border-[#656565] bg-[#262626] !text-[14.5px]"
+              className="h-[6.97vw] w-[19.65vw] !border-[#656565] bg-[#262626] !text-[3.61vw]"
               count={0}
             />
           </div>
@@ -220,7 +222,7 @@ export function CraftPage() {
           <GameHash />
           <Button
             onClick={() => setShowUpgrade(true)}
-            className="mx-auto w-[145px] !rounded-full border bg-[#E94DBB] text-[12px] leading-[10px] font-[600] backdrop-blur-[10.57px]"
+            className="mx-auto w-[36.1vw] !rounded-full border bg-[#E94DBB] text-[2.99vw] leading-[2.49vw] font-[600] backdrop-blur-[10.57px]"
           >
             Улучшить
           </Button>

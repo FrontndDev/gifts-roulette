@@ -32,7 +32,7 @@ export const UserWon = ({
           >
             <div
               className={cn(
-                'bg-text relative flex h-[14.93vw] w-[14.93vw] items-center justify-center rounded-[10px] transition-all',
+                'bg-text relative flex h-[14.8vw] w-[14.8vw] items-center justify-center rounded-[10px] transition-all',
               )}
             >
               <div className="text-2xl"></div>

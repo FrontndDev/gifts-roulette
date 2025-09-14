@@ -14,10 +14,10 @@ export const BalanceCounter: FC<BalanceCounterProps> = ({
 }) => {
   return (
     <div
-      className={`flex min-h-[30px] w-[65px] items-center justify-center gap-[4px] rounded-full border border-white text-[19px] font-[400] text-[#F7F7F7] ${className}`}
+      className={`flex min-h-[7.46vw] w-[16.17vw] items-center justify-center gap-[0.995vw] rounded-full border border-white text-[4.73vw] font-[400] text-[#F7F7F7] ${className}`}
       onClick={onClick}
     >
-      <Icons.BlueTon className={'size-3 h-[14px] w-[14px]'} />
+      <Icons.BlueTon className={'size-3 h-[3.48vw] w-[3.48vw]'} />
       {count}
     </div>
   )

@@ -21,9 +21,13 @@ export function ProfilePage() {
             >
               N
             </div>
-            <div className={'flex flex-row items-center gap-[11px]'}>
-              <span className={'text-[20px] font-[500] text-white'}>Name</span>
-              <span className={'pt-0.5 text-[13px] font-[500] text-[#B3B3B3]'}>
+            <div className={'flex flex-row items-center gap-[2.74vw]'}>
+              <span className={'text-[4.98vw] font-[500] text-white'}>
+                Name
+              </span>
+              <span
+                className={'pt-0.5 text-[3.23vw] font-[500] text-[#B3B3B3]'}
+              >
                 ID: #26282829
               </span>
             </div>
@@ -32,8 +36,8 @@ export function ProfilePage() {
                 'flex w-full items-center gap-2 rounded-[25px] bg-[#171717] p-[2.61vw_7.11vw_2.84vw_6.87vw]'
               }
             >
-              <div className={'flex flex-col gap-[11px]'}>
-                <span className={'text-[20px] font-[500] text-white'}>
+              <div className={'flex flex-col gap-[2.74vw]'}>
+                <span className={'text-[4.98vw] font-[500] text-white'}>
                   Баланс
                 </span>
                 <BalanceCounter count={11} />
@@ -41,29 +45,29 @@ export function ProfilePage() {
               {!false ? (
                 <div
                   className={
-                    'relative flex flex-col items-start gap-[13px] pl-[10px]'
+                    'relative flex flex-col items-start gap-[3.23vw] pl-[2.49vw]'
                   }
                 >
                   <div className="flex">
                     <span
                       className={
-                        'relative top-[5px] w-[131px] text-[15px] font-[500] text-[#B3B3B3]'
+                        'relative top-[1.24vw] w-[32.59vw] text-[3.73vw] font-[500] text-[#B3B3B3]'
                       }
                     >
                       Wall......ET
                     </span>
                     <Icons.Close className={'size-3 cursor-pointer'} />
                   </div>
-                  <div className="flex gap-[11px]">
+                  <div className="flex gap-[2.74vw]">
                     <Button
-                      className={'ml-[6px] !bg-[#0075FF] px-6'}
+                      className={'ml-[1.49vw] w-[23.38vw] !bg-[#0075FF] px-6'}
                       shape={'circle'}
                       size={'small'}
                     >
                       Пополнить
                     </Button>
                     <Button
-                      className={'!bg-[#2B87FE] px-6'}
+                      className={'w-[23.38vw] !bg-[#2B87FE] px-6'}
                       shape={'circle'}
                       size={'small'}
                     >
@@ -74,7 +78,7 @@ export function ProfilePage() {
               ) : (
                 <Button
                   className={
-                    'ml-auto bg-[#0075FF] px-[18px] py-[14px] text-[16px] font-[600] whitespace-nowrap text-[#F7F7F7]'
+                    'ml-auto bg-[#0075FF] px-[4.48vw] py-[3.34vw] text-[3.98vw] font-[600] whitespace-nowrap text-[#F7F7F7]'
                   }
                   shape={'circle'}
                   size={'small'}
@@ -84,14 +88,16 @@ export function ProfilePage() {
               )}
             </div>
 
-            <div className="flex flex-col gap-[20px] pt-[3px]">
+            <div className="flex flex-col gap-[4.98vw] pt-[0.75vw]">
               <div
                 className={
-                  'relative flex w-full flex-row items-center gap-[6px] overflow-hidden rounded-[25px] bg-gradient-to-b from-[#05D1FF] to-[#05A7FF] pt-[5.69vw] pr-[4.74vw] pb-[4.98vw] pl-[8.06vw]'
+                  'relative flex w-full flex-row items-center gap-[1.49vw] overflow-hidden rounded-[25px] bg-gradient-to-b from-[#05D1FF] to-[#05A7FF] pt-[5.69vw] pr-[4.74vw] pb-[4.98vw] pl-[8.06vw]'
                 }
               >
                 <span
-                  className={'text-[16px] leading-[20px] font-[700] text-white'}
+                  className={
+                    'text-[3.98vw] leading-[4.98vw] font-[700] text-white'
+                  }
                 >
                   Получайте FREE Gift за выполнение заданий
                 </span>
@@ -122,12 +128,12 @@ export function ProfilePage() {
               </div>
               <div
                 className={
-                  'flex w-full flex-col items-center gap-[15px] rounded-[25px] bg-gradient-to-b from-[#05D1FF] via-[#6479FF] to-[#8962FF] p-[4.74vw_7.11vw_2.61vw]'
+                  'flex w-full flex-col items-center gap-[3.73vw] rounded-[25px] bg-gradient-to-b from-[#05D1FF] via-[#6479FF] to-[#8962FF] p-[4.74vw_7.11vw_2.61vw]'
                 }
               >
                 <span
                   className={
-                    'text-center text-[18px] leading-[20px] font-[700] text-white'
+                    'text-center text-[4.48vw] leading-[4.98vw] font-[700] text-white'
                   }
                 >
                   Приглашайте друзей и получайте 10% от их комиссий!
@@ -138,28 +144,28 @@ export function ProfilePage() {
                     <Icons.Users className={'size-8 fill-white'} />
                     <span
                       className={
-                        'text-[11px] leading-[15px] font-[500] text-white'
+                        'text-[2.74vw] leading-[3.73vw] font-[500] text-white'
                       }
                     >
                       Приглашено <br />
-                      <span className="text-[13px] leading-[15px] font-[900]">
+                      <span className="text-[3.23vw] leading-[3.73vw] font-[900]">
                         2
                       </span>{' '}
-                      <span className="text-[12px]">друга</span>
+                      <span className="text-[2.99vw]">друга</span>
                     </span>
                   </div>
-                  <div className={'flex flex-row gap-[6px]'}>
+                  <div className={'flex flex-row gap-[1.49vw]'}>
                     <Icons.Diamond className={'size-8 stroke-white'} />
                     <span
                       className={
-                        'text-[11px] leading-[15px] font-[500] text-white'
+                        'text-[2.74vw] leading-[3.73vw] font-[500] text-white'
                       }
                     >
                       Заработано <br />
-                      <span className="text-[13px] leading-[15px] font-[900]">
+                      <span className="text-[3.23vw] leading-[3.73vw] font-[900]">
                         20
                       </span>{' '}
-                      <span className="text-[12px]">TON</span>
+                      <span className="text-[2.99vw]">TON</span>
                     </span>
                   </div>
                 </div>
@@ -193,7 +199,7 @@ export function ProfilePage() {
                   height="70"
                   viewBox="0 0 72 70"
                   fill="none"
-                  className="absolute top-[10px] left-0"
+                  className="absolute top-[2.49vw] left-0"
                 >
                   <path
                     opacity="0.1"
@@ -210,7 +216,7 @@ export function ProfilePage() {
                   height="23"
                   viewBox="0 0 24 23"
                   fill="none"
-                  className="absolute top-[10px] left-[75px]"
+                  className="absolute top-[2.49vw] left-[71.24vw]"
                 >
                   <path
                     opacity="0.1"
@@ -284,14 +290,14 @@ export function ProfilePage() {
                 <div className={'flex flex-col items-center justify-center'}>
                   <span
                     className={
-                      'text-center text-[18px] leading-[20px] font-[700] text-white'
+                      'text-center text-[4.48vw] leading-[4.98vw] font-[700] text-white'
                     }
                   >
                     Стейкинг (100% APR)
                   </span>
                   <span
                     className={
-                      'py-[15px] text-center text-[12px] leading-[15px] font-[400] text-[#FCFCFC]'
+                      'py-[3.73vw] text-center text-[2.99vw] leading-[3.73vw] font-[400] text-[#FCFCFC]'
                     }
                   >
                     Игроки, хранящие гифты в своём инвентаре, получают долю от
@@ -299,31 +305,31 @@ export function ProfilePage() {
                   </span>
                 </div>
                 <div className={'h-px w-full bg-white/50'} />
-                <div className={'grid grid-cols-2 gap-[32px] pt-[15px]'}>
-                  <div className={'flex flex-row gap-[6px]'}>
+                <div className={'grid grid-cols-2 gap-[7.96vw] pt-[3.73vw]'}>
+                  <div className={'flex flex-row gap-[1.49vw]'}>
                     <Icons.Users className={'size-8 fill-white'} />
                     <span
                       className={'text-xs leading-tight font-medium text-white'}
                     >
                       Застейкано <br />
-                      <span className="text-[13px] leading-[15px] font-[900]">
+                      <span className="text-[3.23vw] leading-[3.73vw] font-[900]">
                         200
                       </span>{' '}
-                      <span className="text-[12px]">GIFT</span>
+                      <span className="text-[2.99vw]">GIFT</span>
                     </span>
                   </div>
-                  <div className={'flex flex-row gap-[6px]'}>
+                  <div className={'flex flex-row gap-[1.49vw]'}>
                     <Icons.Diamond className={'size-8 stroke-white'} />
                     <span
                       className={
-                        'text-[11px] leading-[15px] font-[500] text-white'
+                        'text-[2.74vw] leading-[3.73vw] font-[500] text-white'
                       }
                     >
                       Заработано <br />
-                      <span className="text-[13px] leading-[15px] font-[900]">
+                      <span className="text-[3.23vw] leading-[3.73vw] font-[900]">
                         20
                       </span>{' '}
-                      <span className="text-[12px]">TON</span>
+                      <span className="text-[2.99vw]">TON</span>
                     </span>
                   </div>
                 </div>
