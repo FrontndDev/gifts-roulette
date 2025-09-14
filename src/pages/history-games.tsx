@@ -51,7 +51,7 @@ export const HistoryGames = () => {
               {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                 <div
                   key={i}
-                  className="flex justify-between rounded-[15px] border-[1px] border-[#656565] p-[8px_17px_9px_13px]"
+                  className="flex justify-between gap-[6px] rounded-[15px] border-[1px] border-[#656565] p-[8px_17px_9px_13px]"
                 >
                   <div className="flex flex-col gap-[7px]">
                     <div className="flex items-center gap-[7px] text-[15px] leading-[11px] font-[500] text-[#EDEDED]">

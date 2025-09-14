@@ -187,7 +187,7 @@ export function CraftPage() {
             onClick={() => setShowUpgrade(false)}
           />
         </div>
-        <div className="mt-[11px] flex flex-wrap gap-[2.99vw]">
+        <div className="mt-[11px] flex h-[100%] flex-wrap gap-[2.99vw] overflow-auto">
           {mockGifts.map((gift) => renderGiftSlot(gift))}
         </div>
       </div>
