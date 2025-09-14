@@ -43,7 +43,7 @@ export const Circle = () => {
           height="38"
           viewBox="0 0 42 38"
           fill="none"
-          className="absolute top-[55px] left-[15px]"
+          className="absolute top-[13.68vw] left-[3.73vw]"
         >
           <circle
             cx="22.5761"

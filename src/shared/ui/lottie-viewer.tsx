@@ -7,7 +7,7 @@ import { baseURL } from '@/shared/api'
 import { Gift } from '@/shared/api/types'
 
 interface Props {
-  data: Gift
+  data: any
   containerClassName?: string
   width?: number
   height?: number

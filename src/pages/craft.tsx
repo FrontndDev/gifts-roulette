@@ -7,15 +7,7 @@ import { Button } from '@/shared/ui/button'
 import { cn } from '@/shared/libs'
 import { useState } from 'react'
 import { Icons } from '@/shared/ui/icons'
-
-interface Gift {
-  id: string
-  name: string
-  model: string
-  pattern: string
-  background: string
-  rarity: number
-}
+import { Gift } from '@/shared/api/types'
 
 const mockGifts: Gift[] = Array.from({ length: 16 }, (_, i) => ({
   id: `gift-${i + 1}`,

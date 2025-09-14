@@ -30,9 +30,6 @@ export const Icons: IconComponents = {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <foreignObject x="-7.08245" y="-7.08245" width="24.1649" height="24.1649">
-        <div xmlns="http://www.w3.org/1999/xhtml"></div>
-      </foreignObject>
       <g data-figma-bg-blur-radius="7.08245">
         <path
           fillRule="evenodd"

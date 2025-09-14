@@ -31,6 +31,7 @@ export const TabBar = () => {
         lp.tgWebAppPlatform === 'ios' && 'pt-3.5 !pb-7',
       )}
     >
+      {/*@ts-ignore*/}
       {tabs.map(({ href, icon: Icon, label, isActiveHref }) => {
         const isActive =
           href === '/'
