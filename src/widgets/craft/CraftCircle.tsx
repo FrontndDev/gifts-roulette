@@ -5,8 +5,8 @@ import { BalanceCounter } from '@/shared/ui/balance-counter'
 import { cn } from '@/shared/libs'
 
 export const CraftCircle = () => {
-  const [selectedGifts, setSelectedGifts] = useState<number[]>([1])
-  const percent = 93
+  const [selectedGifts, setSelectedGifts] = useState<number[]>([])
+  const percent = 54
 
   return (
     <div className="relative mx-auto flex h-[74.63vw] w-[74.63vw] items-center justify-center overflow-hidden rounded-[50%] border-[1px] border-[#E9E9E9] bg-[#262626]">
@@ -19,7 +19,7 @@ export const CraftCircle = () => {
       <div
         className={cn(
           'relative z-10 flex h-[220px] w-[220px] items-center justify-center rounded-[50%] bg-[#1F1F1F] p-[19px]',
-          'items-end pb-[17px]',
+          selectedGifts.length && 'items-end pb-[17px]',
         )}
       >
         {!selectedGifts.length ? (

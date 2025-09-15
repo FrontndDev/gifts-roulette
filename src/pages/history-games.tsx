@@ -3,6 +3,7 @@ import { GameHash } from '@/features/home/game-hash'
 import { router } from 'next/client'
 import { useState } from 'react'
 import { UserWon } from '@/shared/modals/user-won'
+import { cn } from '@/shared/libs'
 
 export const HistoryGames = () => {
   const [showUserWon, setShowUserWon] = useState(false)
@@ -16,25 +17,25 @@ export const HistoryGames = () => {
       {!showUserWon && (
         <>
           <div className="flex items-center justify-center text-[3.23vw] leading-[3.98vw] font-[500]">
-            <div className="flex items-center gap-[1.74vw] pr-[2.49vw]">
+            <div className="flex items-center gap-[1.74vw] pr-[2.49vw] !text-white">
               <Icons.Clover />
               По шансу
               <Icons.GoldArrow />
             </div>
             <div className="h-[30px] w-[1px] bg-[#636363]" />
-            <div className="flex items-center gap-[1.74vw] px-[2.49vw]">
+            <div className="flex items-center gap-[1.74vw] px-[2.49vw] !text-white">
               <Icons.GoldGift />
               По призу
               <Icons.GoldArrow className="rotate-180" />
             </div>
             <div className="h-[30px] w-[1px] bg-[#636363]" />
-            <div className="flex items-center gap-[1.74vw] pl-[2.49vw]">
+            <div className="flex items-center gap-[1.74vw] pl-[2.49vw] !text-white">
               <Icons.GoldClock />
               По дате
               <Icons.GoldArrow className="rotate-180" />
             </div>
           </div>
-          <div className="bg-dark-gray-card border-text relative h-[calc(80dvh-50px)] w-full rounded-2xl border p-[7.96vw_6.4vw_5.9vw_6.4vw]">
+          <div className="bg-dark-gray-card border-text relative h-[calc(80dvh-50px)] w-full rounded-2xl border p-[7.9vw_6vw_5.5vw_6vw]">
             <div className="">
               <div className="text-center text-[3.73vw] leading-[4.73vw] font-[500] text-white">
                 История игр
@@ -67,21 +68,29 @@ export const HistoryGames = () => {
                   </div>
                   <div className="flex max-w-[25.62vw] flex-col justify-between">
                     <div className="flex items-center gap-[2.99vw]">
-                      <div className="flex items-center gap-[0.995vw] text-[3.23vw] leading-[2.49vw] font-[500]">
+                      <div className="flex items-center gap-[0.995vw] text-[3.23vw] leading-[2.49vw] font-[500] !text-white">
                         <Icons.BlueTon />
                         100
                       </div>
-                      <div className="flex items-center gap-[0.995vw] text-[3.23vw] leading-[2.49vw] font-[500]">
+                      <div className="flex items-center gap-[0.995vw] text-[3.23vw] leading-[2.49vw] font-[500] !text-white">
                         <Icons.Clover />
                         10%
                       </div>
                     </div>
                     <div className="flex h-[6.47vw] w-full flex-wrap gap-[0.37vw]">
-                      <div
-                        className={`flex h-[2.99vw] w-[2.99vw] items-center justify-center rounded-[3px] bg-[#656565] text-[1.24vw]`}
-                      >
-                        <Icons.Bonus />
-                      </div>
+                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(
+                        (i, idx) => (
+                          <div
+                            key={i}
+                            className={cn(
+                              `flex h-[2.99vw] w-[2.99vw] items-center justify-center rounded-[3px] bg-[#656565] text-[1.24vw]`,
+                              idx !== 13 && 'opacity-0',
+                            )}
+                          >
+                            <Icons.Bonus />
+                          </div>
+                        ),
+                      )}
                     </div>
                   </div>
                 </div>

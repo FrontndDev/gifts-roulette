@@ -54,10 +54,9 @@ export const buttonVariantsMotion2: Variants = {
 const buttonStyles = tv({
   base: [
     'relative isolate active:scale-[0.97] inline-flex transition-all cursor-pointer items-center font-medium justify-center gap-x-2',
-    'hover:no-underline',
-    'bg-(--btn-bg) text-(--btn-fg) hover:bg-(--btn-overlay)',
-    'forced-colors:[--btn-icon:ButtonText] forced-colors:hover:[--btn-icon:ButtonText]',
-    '*:data-[slot=icon]:-mx-0.5 *:data-[slot=icon]:my-1 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-current/60 pressed:*:data-[slot=icon]:text-current *:data-[slot=icon]:transition hover:*:data-[slot=icon]:text-current/90',
+    'bg-(--btn-bg) text-(--btn-fg)',
+    'forced-colors:[--btn-icon:ButtonText]',
+    '*:data-[slot=icon]:-mx-0.5 *:data-[slot=icon]:my-1 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-current/60 pressed:*:data-[slot=icon]:text-current *:data-[slot=icon]:transition',
     '*:data-[slot=avatar]:-mx-0.5 *:data-[slot=avatar]:my-1 *:data-[slot=avatar]:*:size-4 *:data-[slot=avatar]:size-4 *:data-[slot=avatar]:shrink-0',
   ],
   variants: {
@@ -94,7 +93,7 @@ const buttonStyles = tv({
       circle: 'rounded-full',
     },
     isDisabled: {
-      true: 'bg-white/4 hover:bg-white/4 text-white active:scale-[100%] cursor-not-allowed',
+      true: 'bg-white/4 text-white active:scale-[100%] cursor-not-allowed',
     },
     isPending: {
       true: 'opacity-50',

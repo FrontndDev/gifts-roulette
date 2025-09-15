@@ -148,7 +148,7 @@ function RootInner({ children }: PropsWithChildren) {
           />
 
           <Header />
-          <main style={{ paddingTop }} className={cn(main, 'px-[8.7vw]')}>
+          <main style={{ paddingTop }} className={cn(main, 'px-[7.45vw]')}>
             {children}
           </main>
 

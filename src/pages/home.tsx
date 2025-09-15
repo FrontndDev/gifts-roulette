@@ -10,9 +10,7 @@ import { GameHash } from '@/features/home/game-hash'
 import { BalanceCounter } from '@/shared/ui/balance-counter'
 import CustomSlider from '@/shared/ui/custom-slider'
 import { UserWon } from '@/shared/modals/user-won'
-import { HistoryGames } from '@/pages/history-games'
 import { BalanceReplenishment } from '@/widgets/home/balance-replenishment'
-import { BalanceWithdrawal } from '@/widgets/home/balance-withdrawal'
 
 interface Player {
   id: string
@@ -231,10 +229,7 @@ export function HomePage() {
 
           {/* Нижние кнопки */}
           <div className="mt-[20px] flex flex-row items-center justify-center gap-[20px]">
-            <Button
-              className="bg-primary !rounded-full border border-[#F7F7F7] text-[15px] font-[500]"
-              onClick={() => setShowAddGiftsModal(true)}
-            >
+            <Button className="bg-primary !rounded-full border border-[#F7F7F7] text-[15px] font-[500]">
               Добавить Гифт
             </Button>
 
@@ -253,70 +248,6 @@ export function HomePage() {
           </div>
 
           {showAddTon && addTon()}
-
-          {/* Модальное окно добавления подарков */}
-          <Modal>
-            <ModalContent
-              isOpen={showAddGiftsModal}
-              onOpenChange={setShowAddGiftsModal}
-              size="md"
-            >
-              <Modal.Header title="Как пополнить подарки?" />
-              <Modal.Body className="space-y-4">
-                <p className="text-sm text-white/80">
-                  Чтобы добавить подарки в свой инвентарь, выполните следующие
-                  шаги:
-                </p>
-
-                <div className="space-y-3">
-                  <div className="flex gap-3">
-                    <div className="bg-primary flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium">
-                      1
-                    </div>
-                    <p className="text-sm text-white/80">
-                      Выберите подарки, которые хотите пополнить.
-                    </p>
-                  </div>
-
-                  <div className="flex gap-3">
-                    <div className="bg-primary flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium">
-                      2
-                    </div>
-                    <p className="text-sm text-white/80">
-                      Отправьте эти подарки нашему специальному аккаунт-боту —{' '}
-                      <span className="font-medium">@giftbot</span>.
-                    </p>
-                  </div>
-
-                  <div className="flex gap-3">
-                    <div className="bg-primary flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-sm font-medium">
-                      3
-                    </div>
-                    <p className="text-sm text-white/80">
-                      После успешной отправки подарки автоматически зачислятся в
-                      ваш инвентарь.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="rounded-lg border border-orange-500/30 bg-orange-500/20 p-3">
-                  <div className="flex gap-2">
-                    <span className="text-sm font-medium text-orange-500">
-                      Важно:
-                    </span>
-                    <p className="text-sm text-orange-200">
-                      перед отправкой убедитесь, что выбран правильный бот —{' '}
-                      <span className="font-medium">@giftbot</span>. В противном
-                      случае зачисление может не произойти.
-                    </p>
-                  </div>
-                </div>
-              </Modal.Body>
-              <Modal.Footer>
-                <Modal.Close className="w-full">Понятно</Modal.Close>
-              </Modal.Footer>
-            </ModalContent>
-          </Modal>
         </div>
       )}
     </PageWrapper>

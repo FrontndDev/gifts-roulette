@@ -1,6 +1,5 @@
 import { cn } from '@/shared/libs'
 import { Icons } from '@/shared/ui/icons'
-import { UserWon } from '@/shared/modals/user-won'
 
 interface Player {
   id: string
@@ -23,23 +22,23 @@ export const Players = ({
   setShowUserWon,
 }: PlayerState) => {
   return (
-    <div className="fw-[500] flex h-[160px] w-[74.63vw] flex-col items-center justify-center gap-[8px] rounded-[25px] border-[1px] border-[#E9E9E9] bg-[#262626] p-[11px_10px] text-[13px] text-[#F7F7F7] backdrop-blur-[16.74px]">
+    <div className="fw-[500] flex w-[74.63vw] flex-col items-center justify-center gap-[8px] rounded-[25px] border-[1px] border-[#E9E9E9] bg-[#262626] p-[2.7vw_2.5vw] text-[3.2vw] text-[#F7F7F7] backdrop-blur-[16.74px]">
       {true ? (
         <>
           {players.map((player) => (
             <div
               key={player.id}
               className={cn(
-                'flex h-[65px] w-full items-center rounded-[15px] border-[1px] p-[0_17px]',
+                'flex h-[65px] w-full items-center rounded-[15px] border-[1px] p-[0_4.2vw]',
                 player.id === '1' ? 'border-[#EF8F00]' : 'border-[#656565]',
               )}
               onClick={() => setShowUserWon(true)}
             >
-              <div className="grid w-full grid-cols-[69px_35px_103px] items-center justify-between">
+              <div className="grid w-full grid-cols-[17.2vw_9.5vw_25.6vw] items-center justify-between gap-x-[4vw]">
                 <div className="flex items-center gap-[5px]">
                   <Icons.Ton className="h-[21px] w-[21px] shrink-0 rotate-270" />
                   <div className="flex flex-col">
-                    <div className="fw-[500] font-[11px]">
+                    <div className="fw-[500] font-[2.74vw]">
                       {player.username}
                     </div>
                     <div className="flex items-center gap-[2px]">
@@ -62,15 +61,25 @@ export const Players = ({
                   </div>
                 </div>
                 <div className="flex flex-col items-center justify-center text-center">
-                  <div className="text-[12px] font-[500]">{player.chance}%</div>
-                  <div className="text-[9px] text-[#BBBBBB]">Шанс</div>
-                </div>
-                <div className="flex h-[26px] w-full flex-wrap gap-[1.5px]">
-                  <div
-                    className={`flex h-[12px] w-[12px] items-center justify-center rounded-[3px] bg-[#656565] text-[5px]`}
-                  >
-                    <Icons.Bonus />
+                  <div className="text-[2.99vw] font-[500]">
+                    {player.chance}%
                   </div>
+                  <div className="text-[2.2vw] text-[#BBBBBB]">Шанс</div>
+                </div>
+                <div className="flex h-[6.5vw] flex-wrap gap-[0.37vw]">
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(
+                    (i, idx) => (
+                      <div
+                        key={i}
+                        className={cn(
+                          `flex h-[2.99vw] w-[2.99vw] items-center justify-center rounded-[3px] bg-[#656565] text-[5px]`,
+                          idx !== 13 && 'opacity-0',
+                        )}
+                      >
+                        <Icons.Bonus />
+                      </div>
+                    ),
+                  )}
                 </div>
               </div>
             </div>

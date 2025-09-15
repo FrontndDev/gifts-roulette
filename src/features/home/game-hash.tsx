@@ -1,10 +1,10 @@
 export const GameHash = ({ className }: { className?: string }) => {
   return (
     <div
-      className={`fw-[400] flex items-center justify-center text-[12px] whitespace-nowrap text-white opacity-20 ${className}`}
+      className={`fw-[400] flex items-center justify-center text-[2.99vw] whitespace-nowrap text-white opacity-20 ${className}`}
     >
       <div>Game #1</div>
-      <div className="mx-[5px] h-[6.5px] w-[1px] bg-white" />
+      <div className="mx-[1.2vw] h-[6.5px] w-[1px] bg-white" />
       <div>Hash</div>
       <svg
         width="10"
@@ -12,7 +12,7 @@ export const GameHash = ({ className }: { className?: string }) => {
         viewBox="0 0 10 10"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="mr-[2px] ml-[5px]"
+        className="mr-[2px] ml-[1.2vw]"
       >
         <g clip-path="url(#clip0_1_672)">
           <path

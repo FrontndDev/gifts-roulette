@@ -89,7 +89,7 @@ export function MyGiftsPage() {
   // Основной вид с сеткой подарков
   const renderGiftsView = () => (
     <div className="flex flex-col">
-      <div className="bg-dark-gray-card border-text flex h-[100%] max-h-[80dvh] w-full flex-wrap gap-[2.99vw] overflow-y-auto rounded-[25px] border p-[5.69vw_6.4vw]">
+      <div className="bg-dark-gray-card border-text flex h-[100%] max-h-[80dvh] w-full flex-wrap gap-[3.6vw] overflow-y-auto rounded-[25px] border p-[5.69vw_6.4vw]">
         {mockGifts.map((gift) => renderGiftSlot(gift))}
       </div>
 

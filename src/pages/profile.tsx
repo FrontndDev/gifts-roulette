@@ -96,13 +96,15 @@ export function ProfilePage() {
               >
                 <span
                   className={
-                    'text-[3.98vw] leading-[4.98vw] font-[700] text-white'
+                    'text-[3.9vw] leading-[4.98vw] font-[700] text-white'
                   }
                 >
                   Получайте FREE Gift за выполнение заданий
                 </span>
                 <Button
-                  className={'!bg-[#fff] px-6 !text-black'}
+                  className={
+                    '!bg-[#fff] px-[3.5vw] text-[12px] font-[600] !text-[#3B3B3B]'
+                  }
                   shape={'circle'}
                   size={'small'}
                   onClick={() => setShowTabs(true)}
@@ -133,7 +135,7 @@ export function ProfilePage() {
               >
                 <span
                   className={
-                    'text-center text-[4.48vw] leading-[4.98vw] font-[700] text-white'
+                    'text-center text-[4.4vw] leading-[4.98vw] font-[700] text-white'
                   }
                 >
                   Приглашайте друзей и получайте 10% от их комиссий!
@@ -171,7 +173,9 @@ export function ProfilePage() {
                 </div>
                 <div className={'mt-1 flex flex-row items-center gap-2'}>
                   <Button
-                    className={'w-[35.55vw] bg-[#FFFFFF] text-[#6D59A6]'}
+                    className={
+                      'w-[35.6vw] bg-[#FFFFFF] text-[2.99vw] whitespace-nowrap text-[#6D59A6]'
+                    }
                     shape={'circle'}
                     size={'small'}
                   >

@@ -19,7 +19,7 @@ const mockGifts: Gift[] = Array.from({ length: 16 }, (_, i) => ({
 }))
 
 export function CraftPage() {
-  const [showItems, setShowItems] = useState(false)
+  const [showItems, setShowItems] = useState(true)
   const [showUpgrade, setShowUpgrade] = useState(false)
   const [selectedTab, setSelectedTab] = useState<'inventory' | 'shop'>(
     'inventory',
@@ -61,10 +61,10 @@ export function CraftPage() {
         <div
           className={cn(
             'bg-text relative flex h-[14.8vw] w-[14.8vw] items-center justify-center rounded-[10px] transition-all',
+            isSelected && selectedTab === 'shop' && 'ring-[2px] ring-[#2B87FE]',
             isSelected &&
               selectedTab === 'inventory' &&
-              'ring-[2px] ring-[#2B87FE]',
-            isSelected && selectedTab === 'shop' && 'ring-[2px] ring-[#E94DBB]',
+              'ring-[2px] ring-[#E94DBB]',
           )}
         >
           <div className="text-2xl"></div>
@@ -74,8 +74,8 @@ export function CraftPage() {
           <span
             className={cn(
               'text-text text-xs transition-all',
-              isSelected && selectedTab === 'inventory' && 'text-[#2B87FE]',
-              isSelected && selectedTab === 'shop' && 'text-[#E94DBB]',
+              isSelected && selectedTab === 'shop' && 'text-[#2B87FE]',
+              isSelected && selectedTab === 'inventory' && 'text-[#E94DBB]',
             )}
           >
             40 TON
@@ -86,10 +86,10 @@ export function CraftPage() {
   }
 
   const renderInventoryView = () => (
-    <div className="flex flex-col items-center gap-[6.22vw]">
+    <div className="flex flex-col items-center gap-[6.2vw]">
       <div
         className={cn(
-          'bg-dark-gray-card border-text flex h-[70dvh] w-full flex-col justify-between gap-[12px] rounded-2xl border p-[22px_28px_36px]',
+          'bg-dark-gray-card border-text flex h-[70dvh] w-full flex-col justify-between gap-[2.99vw] rounded-[25px] border p-[5vw_6.5vw_9vw]',
         )}
       >
         {!mockGifts.length && (
@@ -105,7 +105,7 @@ export function CraftPage() {
         )}
 
         {mockGifts.length ? (
-          <div className="mt-[2.74vw] flex flex-wrap gap-[2.99vw]">
+          <div className="mt-[2.74vw] flex h-[100%] flex-wrap gap-[3.6vw] overflow-auto px-[0.5vw] pt-[0.5vw]">
             {mockGifts.map((gift) => renderGiftSlot(gift))}
           </div>
         ) : (
