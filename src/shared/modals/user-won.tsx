@@ -24,7 +24,7 @@ export const UserWon = ({
           onClick={() => setShowUserWon(false)}
         />
       </div>
-      <div className="mt-[16px] flex flex-wrap gap-[2.99vw]">
+      <div className="mt-[16px] grid grid-cols-[1fr_1fr_1fr_1fr] gap-[3.6vw]">
         {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
           <div
             key={i}

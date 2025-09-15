@@ -19,7 +19,7 @@ const mockGifts: Gift[] = Array.from({ length: 16 }, (_, i) => ({
 }))
 
 export function CraftPage() {
-  const [showItems, setShowItems] = useState(true)
+  const [showItems, setShowItems] = useState(false)
   const [showUpgrade, setShowUpgrade] = useState(false)
   const [selectedTab, setSelectedTab] = useState<'inventory' | 'shop'>(
     'inventory',
@@ -60,7 +60,7 @@ export function CraftPage() {
       >
         <div
           className={cn(
-            'bg-text relative flex h-[14.8vw] w-[14.8vw] items-center justify-center rounded-[10px] transition-all',
+            'bg-text relative flex h-[14vw] w-[14vw] items-center justify-center rounded-[10px] transition-all',
             isSelected && selectedTab === 'shop' && 'ring-[2px] ring-[#2B87FE]',
             isSelected &&
               selectedTab === 'inventory' &&
@@ -105,7 +105,7 @@ export function CraftPage() {
         )}
 
         {mockGifts.length ? (
-          <div className="mt-[2.74vw] flex h-[100%] flex-wrap gap-[3.6vw] overflow-auto px-[0.5vw] pt-[0.5vw]">
+          <div className="mt-[2.74vw] grid grid-cols-[1fr_1fr_1fr_1fr] gap-[3.6vw] overflow-auto px-[0.5vw] pt-[0.5vw]">
             {mockGifts.map((gift) => renderGiftSlot(gift))}
           </div>
         ) : (
@@ -119,7 +119,7 @@ export function CraftPage() {
         <div className="m-[0_4.48vw] flex h-[11.7vw] cursor-pointer overflow-hidden rounded-[2005px] bg-[#656565]">
           <div
             className={cn(
-              'flex h-full w-full items-center justify-center rounded-[1215px]',
+              'flex h-full w-full items-center justify-center rounded-[1215px] !text-white',
               selectedTab === 'inventory' && 'bg-[#E94DBB]',
             )}
             onClick={() => setSelectedTab('inventory')}
@@ -128,7 +128,7 @@ export function CraftPage() {
           </div>
           <div
             className={cn(
-              'flex h-full w-full items-center justify-center rounded-[1215px]',
+              'flex h-full w-full items-center justify-center rounded-[1215px] !text-white',
               selectedTab === 'shop' && 'bg-[#03A7FF]',
             )}
             onClick={() => setSelectedTab('shop')}
@@ -141,6 +141,7 @@ export function CraftPage() {
       {mockGifts.length ? (
         <div className="flex gap-[5.47vw]">
           <Button
+            onClick={() => setShowItems(false)}
             className={cn(
               'border-text m-auto h-[11.19vw] w-[34.83vw] !rounded-full border bg-[#2B87FE] text-white',
               selectedGifts.size > 0
@@ -182,14 +183,14 @@ export function CraftPage() {
           'bg-dark-gray-card border-text flex h-[70dvh] w-full flex-col gap-[2.99vw] rounded-2xl border p-[5.47vw_6.97vw_8.96vw]',
         )}
       >
-        <div className="relative mb-[1.49vw]">
+        <div className="relative">
           <div className="text-center text-[3.73vw] font-[500]">Улучшение</div>
           <Icons.Close
             className="absolute top-0 right-0 h-[19px] w-[19px] cursor-pointer"
             onClick={() => setShowUpgrade(false)}
           />
         </div>
-        <div className="mt-[2.74vw] flex h-[100%] flex-wrap justify-between gap-[2.8vw] overflow-auto">
+        <div className="mt-[2.74vw] grid grid-cols-[1fr_1fr_1fr_1fr] gap-[3.6vw] overflow-auto pt-[1.49vw]">
           {mockGifts.map((gift) => renderGiftSlot(gift))}
         </div>
       </div>
@@ -208,7 +209,7 @@ export function CraftPage() {
       {showUpgrade && upgrade()}
       {!showItems && !showUpgrade && (
         <div className="relative top-[-9.95vw] flex flex-col items-center gap-[4.98vw]">
-          <CraftCircle />
+          <CraftCircle showSelectGift={() => setShowItems(true)} />
           <div className="flex flex-col items-center gap-[3.48vw]">
             <div className="text-[3.98vw] leading-[3.98vw] font-[400] text-white">
               Ваши предметы
@@ -218,7 +219,7 @@ export function CraftPage() {
               count={0}
             />
           </div>
-          <SelectItem />
+          <SelectItem showSelectItem={() => setShowItems(true)} />
           <GameHash />
           <Button
             onClick={() => setShowUpgrade(true)}

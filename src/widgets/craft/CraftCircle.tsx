@@ -4,7 +4,11 @@ import { useState } from 'react'
 import { BalanceCounter } from '@/shared/ui/balance-counter'
 import { cn } from '@/shared/libs'
 
-export const CraftCircle = () => {
+export const CraftCircle = ({
+  showSelectGift,
+}: {
+  showSelectGift: (v: boolean) => void
+}) => {
   const [selectedGifts, setSelectedGifts] = useState<number[]>([])
   const percent = 54
 
@@ -25,7 +29,10 @@ export const CraftCircle = () => {
         {!selectedGifts.length ? (
           <div className="flex flex-col items-center gap-[14px] text-center text-[16px] leading-[16px] font-[400] text-white">
             Выбрать гифт для улучшения
-            <Button className="flex min-h-[35px] w-[35px] items-center justify-center rounded-[15px] border-[1px] border-[#656565] bg-[#262626] p-0">
+            <Button
+              onClick={() => showSelectGift(true)}
+              className="flex min-h-[35px] w-[35px] items-center justify-center rounded-[15px] border-[1px] border-[#656565] bg-[#262626] p-0"
+            >
               <Icons.Plus />
             </Button>
           </div>

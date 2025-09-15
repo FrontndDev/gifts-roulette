@@ -3,7 +3,11 @@ import { Icons } from '@/shared/ui/icons'
 import { useState } from 'react'
 import { cn } from '@/shared/libs'
 
-export const SelectItem = () => {
+export const SelectItem = ({
+  showSelectItem,
+}: {
+  showSelectItem: (v: boolean) => void
+}) => {
   const [selectedSubject, setSelectedSubject] = useState(false)
 
   return (
@@ -11,7 +15,10 @@ export const SelectItem = () => {
       {!selectedSubject ? (
         <div className="flex max-w-[43.5vw] flex-col items-center gap-[2.99vw] text-center text-[3.98vw] leading-[3.98vw] font-[400] text-white">
           Выбрать предмет для крафта
-          <Button className="flex min-h-[8.7vw] w-[8.7vw] items-center justify-center rounded-[15px] border-[1px] border-[#656565] bg-[#262626] p-0">
+          <Button
+            onClick={() => showSelectItem(true)}
+            className="flex min-h-[8.7vw] w-[8.7vw] items-center justify-center rounded-[15px] border-[1px] border-[#656565] bg-[#262626] p-0"
+          >
             <Icons.Plus />
           </Button>
         </div>
