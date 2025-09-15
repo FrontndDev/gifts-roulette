@@ -1,10 +1,8 @@
 'use client'
 
-import { useEffect, useMemo, useRef, useCallback } from 'react'
+import { useEffect, useRef, useCallback } from 'react'
 import lottie, { AnimationItem } from 'lottie-web'
 import { ungzip } from 'pako'
-import { baseURL } from '@/shared/api'
-import { Gift } from '@/shared/api/types'
 
 interface Props {
   data: any
