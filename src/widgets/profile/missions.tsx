@@ -1,5 +1,9 @@
 import { Button } from '@/shared/ui/button'
 import { Icons } from '@/shared/ui/icons'
+import Image from 'next/image'
+import RocketBg from '../../../public/mission-rocket-bg.png'
+import RightBg from '../../../public/mission-right-bg.png'
+import PepeBg from '../../../public/mission-pepe-bg.png'
 
 export const Missions = () => {
   return (
@@ -7,18 +11,42 @@ export const Missions = () => {
       {[1, 2, 3].map((i) => (
         <div
           key={i}
-          className="relative overflow-hidden rounded-[25px] bg-[linear-gradient(180deg,#F9FDFF_0%,#F9FDFF_100%),linear-gradient(180deg,#E7EBFF_0%,#EBEDFF_100%),linear-gradient(0deg,#F2F6FF,#F2F6FF)] p-[15px_26px]"
+          className="relative overflow-hidden rounded-[25px] bg-[linear-gradient(180deg,#F9FDFF_0%,#F9FDFF_100%),linear-gradient(180deg,#E7EBFF_0%,#EBEDFF_100%),linear-gradient(0deg,#F2F6FF,#F2F6FF)] p-[3.7vw_6.5vw]"
         >
+          <Icons.MissionBg className="absolute bottom-[-3.73vw] left-[-2.99vw]" />
+          <Image
+            src={RocketBg.src}
+            alt="Rocket"
+            width="66"
+            height="64"
+            className="absolute top-[6.5vw] left-0"
+          />
+
+          <Image
+            src={RightBg.src}
+            alt="Rocket"
+            width="47"
+            height="47"
+            className="absolute top-0 right-0"
+          />
+          <Image
+            src={PepeBg.src}
+            alt="Rocket"
+            width="43"
+            height="43"
+            className="absolute right-[8px] bottom-[8px]"
+          />
+
           <div className="text-center text-[3.48vw] font-[800] text-black">
             Приключения пепы
           </div>
 
           <div className="flex flex-col items-center p-[0_1.74vw] pt-[2.99vw]">
-            <div className="flex gap-[1.99vw]">
-              <div className="relative flex h-[19.65vw] w-[18.91vw] items-center justify-center rounded-[20px] bg-[#2B87FE]">
+            <div className="flex gap-[2vw]">
+              <div className="bg-primary relative flex h-[19.65vw] w-[18.9vw] items-center justify-center rounded-[20px]">
                 <Icons.Question />
-                <Icons.SecondStar className="absolute top-[3.73vw] right-[4.48vw] rotate-[6.88]" />
-                <div className="absolute right-0 bottom-0 left-0 m-auto flex h-[5.47vw] w-fit items-center gap-[0.5vw] text-[2.24vw] leading-[3.73vw] font-[600] text-[#F3F3F3]">
+                <Icons.SecondStar className="absolute top-[3.7vw] right-[4.5vw] rotate-[6.88]" />
+                <div className="absolute right-0 bottom-0 left-0 m-auto flex h-[5.5vw] w-fit items-center gap-[0.5vw] text-[2.24vw] leading-[3.7vw] font-[600] text-[#F3F3F3]">
                   <Icons.ClearedTon className="h-[1.74vw] w-[1.74vw]" />
                   10
                 </div>
@@ -44,12 +72,10 @@ export const Missions = () => {
                 ))}
               </div>
             </div>
-            <Button className="m-auto mt-[1.99vw] h-[6.22vw] min-h-[6.22vw] w-[21.14vw] !rounded-full border bg-[#2B87FE] p-0 text-[8px] leading-[6px] font-[600]">
+            <Button className="bg-primary m-auto mt-[1.99vw] h-[6.22vw] min-h-[6.22vw] w-[21.14vw] !rounded-full border p-0 text-[8px] leading-[6px] font-[600]">
               Забрать награду
             </Button>
           </div>
-
-          <Icons.MissionBg className="absolute bottom-[-3.73vw] left-[-2.99vw]" />
         </div>
       ))}
     </div>

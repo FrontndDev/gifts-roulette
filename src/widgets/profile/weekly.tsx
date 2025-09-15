@@ -14,6 +14,7 @@ export const Weekly = () => {
 
         <Icons.WeeklyBg className="absolute bottom-[-9.2vw] left-[-14.43vw] rounded-[30px]" />
         <Icons.WeeklyGiftBg className="absolute right-0 bottom-[-6.71vw] left-0 m-auto" />
+        <Icons.WeeklyStar className="absolute top-[9.5vw] right-[10.1vw]" />
       </div>
       {[1, 2, 3, 4].map((i) => (
         <div
@@ -30,7 +31,7 @@ export const Weekly = () => {
           </div>
         </div>
       ))}
-      <Button className="mx-auto mt-[1.49vw] w-[36.07vw] !rounded-full border border-none bg-[#2B87FE] text-[2.99vw] leading-[2.49vw] font-[600] backdrop-blur-[10.57px]">
+      <Button className="bg-primary mx-auto mt-[1.49vw] w-[36.07vw] !rounded-full border border-none text-[2.99vw] leading-[2.49vw] font-[600] backdrop-blur-[10.57px]">
         Получить награду
       </Button>
     </div>

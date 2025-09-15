@@ -1,5 +1,7 @@
 import { cn } from '@/shared/libs'
 import { Icons } from '@/shared/ui/icons'
+import Image from 'next/image'
+import CatImage from '../../../public/cat.png'
 
 interface Player {
   id: string
@@ -22,23 +24,23 @@ export const Players = ({
   setShowUserWon,
 }: PlayerState) => {
   return (
-    <div className="fw-[500] flex w-[74.63vw] flex-col items-center justify-center gap-[8px] rounded-[25px] border-[1px] border-[#E9E9E9] bg-[#262626] p-[2.7vw_2.5vw] text-[3.2vw] text-[#F7F7F7] backdrop-blur-[16.74px]">
-      {true ? (
+    <div className="fw-[500] flex w-full flex-col items-center justify-center gap-[8px] rounded-[25px] bg-[#39393933] p-[11px_6px] text-[3.2vw] text-[#F7F7F7] backdrop-blur-[16.74px]">
+      {players.length ? (
         <>
           {players.map((player) => (
             <div
               key={player.id}
               className={cn(
-                'flex h-[65px] w-full items-center rounded-[15px] border-[1px] p-[0_4.2vw]',
-                player.id === '1' ? 'border-[#EF8F00]' : 'border-[#656565]',
+                'flex h-[16.2vw] w-full items-center rounded-[15px] border-[0.5px] bg-[#151515]',
+                player.id === '2' ? 'border-[#151515]' : 'border-[#00EF93]',
               )}
               onClick={() => setShowUserWon(true)}
             >
-              <div className="grid w-full grid-cols-[17.2vw_9.5vw_25.6vw] items-center justify-between gap-x-[4vw]">
-                <div className="flex items-center gap-[5px]">
-                  <Icons.Ton className="h-[21px] w-[21px] shrink-0 rotate-270" />
-                  <div className="flex flex-col">
-                    <div className="fw-[500] font-[2.74vw]">
+              <div className="flex w-full items-center justify-center gap-x-[20px]">
+                <div className="flex w-[18.9vw] items-center gap-[1.2vw] overflow-hidden">
+                  <Icons.Ton className="h-[5vw] w-[5vw] shrink-0 rotate-270" />
+                  <div className="flex flex-col overflow-hidden">
+                    <div className="fw-[500] overflow-hidden font-[2.5vw] text-ellipsis">
                       {player.username}
                     </div>
                     <div className="flex items-center gap-[2px]">
@@ -60,23 +62,34 @@ export const Players = ({
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-center text-center">
+                <div className="flex w-[35px] flex-col items-center justify-center text-center">
                   <div className="text-[2.99vw] font-[500]">
                     {player.chance}%
                   </div>
                   <div className="text-[2.2vw] text-[#BBBBBB]">Шанс</div>
                 </div>
-                <div className="flex h-[6.5vw] flex-wrap gap-[0.37vw]">
+                <div className="flex h-[6.5vw] w-[103px] flex-wrap gap-[0.37vw]">
                   {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map(
                     (i, idx) => (
                       <div
                         key={i}
                         className={cn(
-                          `flex h-[2.99vw] w-[2.99vw] items-center justify-center rounded-[3px] bg-[#656565] text-[5px]`,
-                          idx !== 13 && 'opacity-0',
+                          `flex h-[2.99vw] w-[2.99vw] items-center justify-center overflow-hidden rounded-[2.5px] bg-[#656565] text-[5px] leading-1`,
+                          // idx !== 13 && 'opacity-0',
                         )}
                       >
-                        <Icons.Bonus />
+                        {idx !== 13 ? (
+                          <Image
+                            src={CatImage.src}
+                            alt="Cat"
+                            width="14"
+                            height="14"
+                            className="object-cover"
+                          />
+                        ) : (
+                          <div>+70</div>
+                        )}
+                        {/*<Icons.Bonus />*/}
                       </div>
                     ),
                   )}

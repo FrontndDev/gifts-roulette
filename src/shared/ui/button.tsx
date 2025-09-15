@@ -53,7 +53,7 @@ export const buttonVariantsMotion2: Variants = {
 
 const buttonStyles = tv({
   base: [
-    'relative isolate active:scale-[0.97] inline-flex transition-all cursor-pointer items-center font-medium justify-center gap-x-2',
+    'whitespace-nowrap relative isolate active:scale-[0.97] inline-flex transition-all cursor-pointer items-center font-medium justify-center gap-x-[4px]',
     'bg-(--btn-bg) text-(--btn-fg)',
     'forced-colors:[--btn-icon:ButtonText]',
     '*:data-[slot=icon]:-mx-0.5 *:data-[slot=icon]:my-1 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-current/60 pressed:*:data-[slot=icon]:text-current *:data-[slot=icon]:transition',

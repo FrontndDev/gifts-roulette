@@ -50,7 +50,8 @@ export const Header = () => {
     <div className={containerClass} style={{ paddingTop }}>
       <header className="flex max-h-[28px] flex-row items-center justify-between">
         <BalanceCounter
-          className="cursor-pointer"
+          className="h-[28px] w-fit cursor-pointer gap-[3px] p-[8px_12px] text-[14px] leading-1 font-[400]"
+          classNameIcon="w-[11px] h-[11px]"
           count={11}
           onClick={() => setShowWithdrawal(true)}
         />

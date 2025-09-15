@@ -1,19 +1,22 @@
 import { Button } from '@/shared/ui/button'
 import { Icons } from '@/shared/ui/icons'
-import { useState } from 'react'
 import { BalanceCounter } from '@/shared/ui/balance-counter'
 import { cn } from '@/shared/libs'
+import { GiftI } from '@/shared/api/types'
+import Image from 'next/image'
+import TestImage from '../../../public/big-pepe.png'
 
 export const CraftCircle = ({
-  showSelectGift,
+  openUpgradeModal,
+  selectedGift,
 }: {
-  showSelectGift: (v: boolean) => void
+  openUpgradeModal: (v: boolean) => void
+  selectedGift: GiftI | null
 }) => {
-  const [selectedGifts, setSelectedGifts] = useState<number[]>([])
   const percent = 54
 
   return (
-    <div className="relative mx-auto flex h-[74.63vw] w-[74.63vw] items-center justify-center overflow-hidden rounded-[50%] border-[1px] border-[#E9E9E9] bg-[#262626]">
+    <div className="relative mx-auto flex h-[84.3vw] w-[84.3vw] items-center justify-center overflow-hidden rounded-[50%] border-[1px] border-[#E9E9E9] bg-[#262626]">
       <div
         className={cn(
           'absolute right-0 bottom-0 left-0 m-auto w-[calc(100%)] bg-[#E94DBB]',
@@ -22,25 +25,33 @@ export const CraftCircle = ({
       />
       <div
         className={cn(
-          'relative z-10 flex h-[220px] w-[220px] items-center justify-center rounded-[50%] bg-[#1F1F1F] p-[19px]',
-          selectedGifts.length && 'items-end pb-[17px]',
+          'relative z-10 flex h-[64vw] w-[64vw] items-center justify-center rounded-[50%] bg-[#1F1F1F] p-[19px]',
+          selectedGift && 'h-[unset] w-[unset] items-end p-0',
         )}
       >
-        {!selectedGifts.length ? (
-          <div className="flex flex-col items-center gap-[14px] text-center text-[16px] leading-[16px] font-[400] text-white">
+        {!selectedGift ? (
+          <div className="flex flex-col items-center gap-[14px] text-center text-[4vw] leading-[4vw] font-[400] text-white">
             Выбрать гифт для улучшения
             <Button
-              onClick={() => showSelectGift(true)}
+              onClick={() => openUpgradeModal(true)}
               className="flex min-h-[35px] w-[35px] items-center justify-center rounded-[15px] border-[1px] border-[#656565] bg-[#262626] p-0"
             >
               <Icons.Plus />
             </Button>
           </div>
         ) : (
-          <BalanceCounter
-            className="h-[27px] w-[79px] !border-[#656565] bg-[#262626] !text-[14.5px]"
-            count={200}
-          />
+          <div className="relative h-[64vw] w-[64vw] rounded-[50%] border-[1.2vw] border-[#101010]">
+            <Image
+              src={TestImage.src}
+              alt="Pepe"
+              fill
+              className="inset-0 z-10 m-auto object-cover"
+            />
+          </div>
+          // <BalanceCounter
+          //   className="h-[27px] w-[79px] !border-[#656565] bg-[#262626] !text-[14.5px]"
+          //   count={200}
+          // />
         )}
       </div>
       <div className="text-[15.8px] leading-[15.8px] font-[400] text-[#656565]">

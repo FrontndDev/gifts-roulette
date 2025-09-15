@@ -11,6 +11,8 @@ import { BalanceCounter } from '@/shared/ui/balance-counter'
 import CustomSlider from '@/shared/ui/custom-slider'
 import { UserWon } from '@/shared/modals/user-won'
 import { BalanceReplenishment } from '@/widgets/home/balance-replenishment'
+import { PlaceTon } from '@/widgets/home/place-ton'
+import { Inventory } from '@/shared/modals/inventory'
 
 interface Player {
   id: string
@@ -27,9 +29,9 @@ export function HomePage() {
   )
   const [timeLeft, setTimeLeft] = useState(15)
   const [showAddTon, setShowAddTon] = useState(false)
-  const [showAddGiftsModal, setShowAddGiftsModal] = useState(false)
   const [showUserWon, setShowUserWon] = useState(false)
   const [showReplenishment, setShowReplenishment] = useState(false)
+  const [showInventory, setShowInventory] = useState(false)
 
   // Моковые данные игроков
   const [players, setPlayers] = useState<Player[]>([
@@ -42,7 +44,7 @@ export function HomePage() {
     },
     {
       id: '2',
-      username: '@durov',
+      username: '@notme',
       ticketCount: 100,
       chance: 35,
       color: '#4ECDC4', // Бирюзовый
@@ -145,41 +147,6 @@ export function HomePage() {
     )
   }
 
-  const addTon = () => {
-    return (
-      <div className="fixed right-0 bottom-0 left-0 z-[100] h-[74.63vw] w-[100vw] rounded-t-[50px] border-t-[1.4px] border-[#656565] bg-[#262626] p-[25px_38px_35px]">
-        <div className="relative text-center text-[21px] leading-[21px] font-[400]">
-          Баланс
-          <Icons.Close
-            className="absolute top-0 right-0 h-[24px] w-[24px] cursor-pointer"
-            onClick={() => setShowAddTon(false)}
-          />
-        </div>
-        <div className="flex flex-col items-center justify-center">
-          <BalanceCounter
-            className="mt-[13px] h-[37px] w-[107px] !border-[#656565]"
-            count={11}
-          />
-          <CustomSlider className="w-full" />
-
-          <div className="max-w-[213px] py-[28px] text-center text-[14px] leading-[15px] font-[400] text-[#656565]">
-            Для ставки с вашего баланса будет списано 10 TON
-          </div>
-
-          <Button
-            onClick={() => {
-              setShowReplenishment(true)
-              setShowAddTon(false)
-            }}
-            className="w-[140px] !rounded-full border bg-[#2B87FE] text-[15px] leading-[15px] font-[500] backdrop-blur-[10.57px]"
-          >
-            Поставить
-          </Button>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <PageWrapper back={false}>
       {showUserWon && (
@@ -189,10 +156,17 @@ export function HomePage() {
         <BalanceReplenishment setShowReplenishment={setShowReplenishment} />
       )}
 
-      {!showUserWon && (
+      {showInventory && (
+        <Inventory
+          closeInventory={() => setShowInventory(false)}
+          add={() => {}}
+        />
+      )}
+
+      {!showUserWon && !showInventory && (
         <div className="relative top-[-40px] text-white">
           {/* Основной контент */}
-          <div className="flex flex-col items-center gap-6 px-[51px]">
+          <div className="flex w-full flex-col items-center gap-6">
             {/* Игровой круг */}
             <div className="flex flex-col items-center gap-4">
               {/*{renderGameCircle()}*/}
@@ -228,26 +202,36 @@ export function HomePage() {
           <GameHash className="mt-[21px]" />
 
           {/* Нижние кнопки */}
-          <div className="mt-[20px] flex flex-row items-center justify-center gap-[20px]">
-            <Button className="bg-primary !rounded-full border border-[#F7F7F7] text-[15px] font-[500]">
+          <div className="mt-[20px] flex flex-row items-center justify-center gap-[9px]">
+            <Button
+              onClick={() => setShowInventory(true)}
+              className="w-[39.8vw] gap-0 !rounded-full bg-[#00EF93] p-0 text-[15px] leading-[0.5] font-[600] text-black"
+            >
+              <Icons.Gift className="h-[25px] w-[25px] [&_path]:!stroke-black" />
               Добавить Гифт
             </Button>
 
             {false ? (
-              <Button className="w-[140px] !rounded-full border bg-[#262626] text-[15px] font-[500] backdrop-blur-[10.57px]">
+              <Button className="w-[39.8vw] !rounded-full border bg-[#262626] text-[15px] leading-[0.5] font-[600] backdrop-blur-[10.57px]">
                 Пополнить TON
               </Button>
             ) : (
               <Button
                 onClick={() => setShowAddTon(true)}
-                className="w-[140px] !rounded-full border bg-[#2B87FE] text-[15px] leading-[15px] font-[500] backdrop-blur-[10.57px]"
+                className="w-[39.8vw] gap-0 !rounded-full border bg-[#3AB0FC] p-0 text-[15px] leading-[0.5] leading-[15px] font-[600] text-black backdrop-blur-[10.57px]"
               >
-                Добавить <br /> TON
+                <Icons.Ton className="h-[30px] w-[30px] [&_path]:!fill-black" />
+                Добавить TON
               </Button>
             )}
           </div>
 
-          {showAddTon && addTon()}
+          {showAddTon && (
+            <PlaceTon
+              setShowAddTon={setShowAddTon}
+              setShowReplenishment={setShowReplenishment}
+            />
+          )}
         </div>
       )}
     </PageWrapper>

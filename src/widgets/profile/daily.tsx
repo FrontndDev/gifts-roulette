@@ -18,12 +18,13 @@ export const Daily = () => {
             <Icons.Question />
             <Icons.SecondStar className="absolute top-[3.73vw] right-[4.48vw] z-10 rotate-[6.88]" />
           </div>
-          <Button className="m-auto mt-[1.99vw] h-[6.2vw] min-h-[6.2vw] w-[21.1vw] !rounded-full border bg-[#2B87FE] p-0 text-[1.99vw] leading-[1.49vw] font-[600]">
+          <Button className="bg-primary m-auto mt-[1.99vw] h-[6.2vw] min-h-[6.2vw] w-[21.1vw] !rounded-full border p-0 text-[1.99vw] leading-[1.49vw] font-[600]">
             Забрать награду
           </Button>
         </div>
 
         <Icons.DailyBg className="absolute right-0 bottom-[-7.96vw] left-[2.5vw] m-auto" />
+        <Icons.DailyStarBg className="absolute top-0 left-0" />
       </div>
 
       {[1, 2, 3, 4, 5].map((i) => (
@@ -46,7 +47,7 @@ export const Daily = () => {
             <Button className="h-[5.47vw] min-h-[5.47vw] !rounded-full border border-none bg-[#D5C4FF] p-[0_1.99vw] text-[1.99vw] leading-[1.49vw] font-[600] whitespace-nowrap text-[#856DD2]">
               Начать
             </Button>
-            <Button className="h-[5.47vw] min-h-[5.47vw] !rounded-full border bg-[#2B87FE] p-[0_1.99vw] text-[1.99vw] leading-[1.49w] font-[600] whitespace-nowrap">
+            <Button className="bg-primary h-[5.47vw] min-h-[5.47vw] !rounded-full border p-[0_1.99vw] text-[1.99vw] leading-[1.49w] font-[600] whitespace-nowrap">
               Проверить
             </Button>
           </div>

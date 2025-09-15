@@ -1,4 +1,4 @@
-export interface Gift {
+export interface GiftI {
   id: string
   name: string
   model: string

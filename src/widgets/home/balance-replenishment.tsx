@@ -8,9 +8,9 @@ export const BalanceReplenishment = ({
   setShowReplenishment: (v: boolean) => void
 }) => {
   return (
-    <div className="fixed right-0 bottom-0 left-0 z-[100] h-[282px] w-full rounded-t-[50px] border-t-[1px] border-t-[#656565] bg-[#262626] px-[48px] pt-[58px] pb-[33px]">
+    <div className="fixed right-0 bottom-0 left-0 z-[100] h-[70vw] w-full rounded-t-[50px] border-t-[1px] border-t-[#2B2B2B] bg-[#181818] px-[48px] pt-[58px] pb-[33px]">
       <div className="relative">
-        <Icons.BalanceBg className="absolute right-[-11.1vw] bottom-[-10.95vw]" />
+        <Icons.BalanceBg className="absolute right-[-11.1vw] bottom-[-14vw] h-[70vw]" />
 
         <div className="absolute top-[-30px] right-[-20px] z-1 flex h-[25px] w-[85px] items-center justify-center rounded-[2915px] border-[1px] border-[#656565] text-[10px] leading-[9px] font-[500] text-[#B0B0B0]">
           QbcWall......ET
@@ -40,7 +40,7 @@ export const BalanceReplenishment = ({
           >
             Отмена
           </Button>
-          <Button className="h-[45px] w-[140px] !rounded-full border bg-[#2B87FE] text-[15px] leading-[15px] font-[500] backdrop-blur-[10.57px]">
+          <Button className="bg-primary h-[45px] w-[140px] !rounded-full border text-[15px] leading-[15px] font-[500] text-black backdrop-blur-[10.57px]">
             Пополнить
           </Button>
         </div>

@@ -4,6 +4,8 @@ import { Button } from '@/shared/ui/button'
 import { Icons } from '@/shared/ui/icons'
 import { useState } from 'react'
 import { TabsContent } from '@/widgets/profile/TabsContent'
+import Image from 'next/image'
+import FreeGiftPepe from '../../public/free-gift-pepe.png'
 
 export function ProfilePage() {
   const [showTabs, setShowTabs] = useState(false)
@@ -67,7 +69,7 @@ export function ProfilePage() {
                       Пополнить
                     </Button>
                     <Button
-                      className={'w-[23.38vw] !bg-[#2B87FE] px-6'}
+                      className={'!bg-primary w-[23.38vw] px-6'}
                       shape={'circle'}
                       size={'small'}
                     >
@@ -91,9 +93,17 @@ export function ProfilePage() {
             <div className="flex flex-col gap-[4.98vw] pt-[0.75vw]">
               <div
                 className={
-                  'relative flex w-full flex-row items-center gap-[1.49vw] overflow-hidden rounded-[25px] bg-gradient-to-b from-[#05D1FF] to-[#05A7FF] pt-[5.69vw] pr-[4.74vw] pb-[4.98vw] pl-[8.06vw]'
+                  'relative flex w-full flex-row items-center gap-[1.49vw] overflow-hidden rounded-[25px] bg-gradient-to-b from-[#05D1FF] to-[#05A7FF] py-[23px] pr-[4.74vw] pl-[8.06vw]'
                 }
               >
+                <Image
+                  src={FreeGiftPepe.src}
+                  alt="Pepe"
+                  width="132"
+                  height="132"
+                  className="absolute right-[0] bottom-[0]"
+                />
+
                 <span
                   className={
                     'text-[3.9vw] leading-[4.98vw] font-[700] text-white'
@@ -301,7 +311,7 @@ export function ProfilePage() {
                   </span>
                   <span
                     className={
-                      'py-[3.73vw] text-center text-[2.99vw] leading-[3.73vw] font-[400] text-[#FCFCFC]'
+                      'py-[3.7vw] text-center text-[2.99vw] leading-[3.73vw] font-[400] text-[#FCFCFC]'
                     }
                   >
                     Игроки, хранящие гифты в своём инвентаре, получают долю от
