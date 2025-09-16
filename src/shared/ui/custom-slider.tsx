@@ -19,7 +19,7 @@ export default function CustomSlider({ className }: { className?: string }) {
       />
 
       {/* Числовое значение */}
-      <div className="flex h-[36px] w-[71px] shrink-0 items-center justify-center rounded-full border border-[#656565] text-[15px] leading-[8px] font-[500] text-white">
+      <div className="flex h-[36px] w-[71px] shrink-0 items-center justify-center rounded-full bg-[#121212] text-[15px] leading-[8px] font-[500] text-white">
         {value}
       </div>
 

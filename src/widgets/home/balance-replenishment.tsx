@@ -12,11 +12,11 @@ export const BalanceReplenishment = ({
       <div className="relative">
         <Icons.BalanceBg className="absolute right-[-11.1vw] bottom-[-14vw] h-[70vw]" />
 
-        <div className="absolute top-[-30px] right-[-20px] z-1 flex h-[25px] w-[85px] items-center justify-center rounded-[2915px] border-[1px] border-[#656565] text-[10px] leading-[9px] font-[500] text-[#B0B0B0]">
+        <div className="absolute top-[-36px] right-[-20px] z-1 flex h-[25px] w-[85px] items-center justify-center rounded-[2915px] border-[1px] border-[#656565] text-[10px] leading-[9px] font-[500] text-[#B0B0B0]">
           QbcWall......ET
         </div>
 
-        <div className="relative z-1 pt-[7px] pb-[24px] text-center text-[18px] leading-[13px] font-[700] text-white">
+        <div className="relative z-1 pb-[24px] text-center text-[18px] leading-[13px] font-[700] text-white">
           Пополнение баланса
         </div>
         <div>
