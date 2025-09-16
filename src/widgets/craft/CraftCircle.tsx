@@ -16,7 +16,7 @@ export const CraftCircle = ({
   const percent = 54
 
   return (
-    <div className="relative mx-auto flex h-[84.3vw] w-[84.3vw] items-center justify-center overflow-hidden rounded-[50%] border-[1px] border-[#E9E9E9] bg-[#262626]">
+    <div className="relative mx-auto flex h-[84.3vw] w-[84.3vw] items-center justify-center overflow-hidden rounded-[50%] border-[1px] border-[#E9E9E9] bg-[#181818]">
       <div
         className={cn(
           'absolute right-0 bottom-0 left-0 m-auto w-[calc(100%)] bg-[#E94DBB]',
@@ -25,7 +25,7 @@ export const CraftCircle = ({
       />
       <div
         className={cn(
-          'relative z-10 flex h-[64vw] w-[64vw] items-center justify-center rounded-[50%] bg-[#1F1F1F] p-[19px]',
+          'relative z-10 flex h-[64vw] w-[64vw] items-center justify-center rounded-[50%] bg-[#101010] p-[19px]',
           selectedGift && 'h-[unset] w-[unset] items-end p-0',
         )}
       >
@@ -34,7 +34,7 @@ export const CraftCircle = ({
             Выбрать гифт для улучшения
             <Button
               onClick={() => openUpgradeModal(true)}
-              className="flex min-h-[35px] w-[35px] items-center justify-center rounded-[15px] border-[1px] border-[#656565] bg-[#262626] p-0"
+              className="flex min-h-[35px] w-[35px] items-center justify-center rounded-[15px] bg-[#262626] p-0"
             >
               <Icons.Plus />
             </Button>

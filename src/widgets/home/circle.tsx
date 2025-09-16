@@ -14,7 +14,7 @@ export const Circle = () => {
     <div
       className={cn(
         'relative flex h-[83.8vw] w-[83.8vw] items-center justify-center rounded-[50%] border-[1px] border-[#484848]',
-        status === 'wait' && 'bg-[#262626]',
+        status === 'wait' && 'bg-[#181818]',
       )}
     >
       <svg
